@@ -4,12 +4,13 @@ pipeline {
     stage('Build') {
       agent {
         docker {
-          image 'ubuntu'
+          args '-u 0'
+          image 'alpine'
         }
 
       }
       steps {
-        sh 'sudo apt install gcc'
+        sh 'apk get gcc libc-dev openssl-dev make libpcap-dev'
       }
     }
   }
