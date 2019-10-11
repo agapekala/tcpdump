@@ -5,12 +5,13 @@ pipeline {
       agent {
         docker {
           args '-u 0'
-          image 'alpine'
+          image 'ubuntu'
         }
 
       }
       steps {
-        sh 'apk get gcc libc-dev openssl-dev make libpcap-dev'
+        sh '''apt install gcc libc-dev openssl-dev make libpcap-dev
+./configure && make'''
       }
     }
   }
