@@ -11,8 +11,9 @@ pipeline {
       }
       steps {
         sh '''apt update
-apt install gcc libc-dev openssl-dev make libpcap-dev
-./configure && make'''
+'''
+        sh 'apt install gcc libc-dev openssl-dev make libpcap-dev'
+        sh './configure && make'
       }
     }
   }
