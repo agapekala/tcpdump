@@ -9,7 +9,8 @@ pipeline {
 
       }
       steps {
-        sh './configure'
+        sh '''whoami
+./configure'''
       }
     }
   }
